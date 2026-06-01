@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumru Soba – 1987'den Bugüne Sıcacık Yuvalar İçin</title>
+    
+    <!-- Meta Descriptions (SEO) -->
+    <meta name="description" content="Yılların deneyimiyle Ordu Kumru'da imal ettiğimiz döküm ve sac kuzine sobalar, evinizde sıcaklık ve lezzeti bir araya getirir. Kendi sobanızı tasarlayın!">
+    <meta name="keywords" content="kumru soba, kuzine soba imalatı, döküm soba, fırınlı soba, ordu soba, kovalı soba, şömine soba, soba fiyatları">
+    <meta name="author" content="Kumru Soba">
+    
+    <!-- OpenGraph (Facebook, WhatsApp, vb. Paylaşımlar için) -->
+    <meta property="og:title" content="Kumru Soba – 1987'den Bugüne Sıcacık Yuvalar İçin">
+    <meta property="og:description" content="Ordu Kumru'da üretilen el emeği döküm kuzineler. Evinizi ısıtırken eşsiz yemekler pişirmenizi sağlayan geleneksel fırınlı sobalar.">
+    <meta property="og:image" content="images/hero-bg.png">
+    <meta property="og:url" content="https://www.kumrusoba.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/soba-somine.png">
+    
+    <!-- FontAwesome CSS (İkonlar) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 1. HEADER / NAVBAR -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <i class="fa-solid fa-fire-flame-curved"></i>
+                KUMRU<span>SOBA</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link active" data-i18n="nav-home">Ana Sayfa</a>
+                <a href="#customizer" class="nav-link" data-i18n="nav-customizer">Soba Tasarla</a>
+                <a href="#calculator" class="nav-link" data-i18n="nav-calculator">Isı Hesaplayıcı</a>
+                <a href="#products" class="nav-link" data-i18n="nav-products">Ürünlerimiz</a>
+                <a href="#story" class="nav-link" data-i18n="nav-story">Hikayemiz</a>
+                <a href="#gallery" class="nav-link" data-i18n="nav-gallery">Galeri</a>
+                <a href="#contact" class="nav-link" data-i18n="nav-contact">İletişim</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <!-- Dil Değiştirici -->
+                <div class="lang-switcher">
+                    <button class="lang-btn" aria-label="Change Language">
+                        <i class="fa-solid fa-globe"></i>
+                        <span class="lang-label">TR</span>
+                        <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button class="lang-opt" data-lang="tr">
+                            <img src="https://flagcdn.com/w20/tr.png" alt="Turkish"> Türkçe
+                        </button>
+                        <button class="lang-opt" data-lang="en">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="English"> English
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mobil Menü Toggle Butonu -->
+                <button class="mobile-toggle" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO / KAHRAMAN BÖLÜMÜ -->
+    <section id="home" class="hero">
+        <div class="hero-bg-overlay">
+            <img src="images/hero-bg.png" alt="Kumru Soba Oda Görünümü" class="hero-bg-image">
+            <div class="hero-gradient"></div>
+        </div>
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="badge" data-i18n="hero-badge">1987'den Bugüne Ustalıkla</span>
+                <h1 class="hero-title" data-i18n="hero-title">
+                    Sıcak Yuvaların Geleneksel Sırrı: <span>Kumru Kuzineleri</span>
+                </h1>
+                <p class="hero-desc" data-i18n="hero-desc">
+                    Ordu'nun Kumru ilçesinde, döküm demir ve dayanıklı emayeyi usta işçilikle birleştiriyoruz. Evinize hem kış sıcaklığı hem de fırın lezzeti getiriyoruz.
+                </p>
+                
+                <div class="hero-btns">
+                    <a href="#customizer" class="btn btn-primary" data-i18n="hero-btn-custom">Kendi Sobanı Tasarla</a>
+                    <a href="#products" class="btn btn-secondary" data-i18n="hero-btn-catalog">Kataloğu İncele</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">39+</span>
+                        <span class="stat-label" data-i18n="stat-exp">Yıllık Deneyim</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label" data-i18n="stat-craft">Usta İşçilik</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">12+</span>
+                        <span class="stat-label" data-i18n="stat-export">Ülkeye Gönderim</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="glowing-circle"></div>
+                <img src="images/soba-somine.png" alt="Klasik Altın Süslü Kuzine Soba" class="hero-stove-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ÖNE ÇIKAN ÖZELLİKLER (Features) -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <!-- Card 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon-box">
+                        <i class="fa-solid fa-hammer"></i>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feat-1-title">El Emeği & Ustalık</h3>
+                    <p class="feature-desc" data-i18n="feat-1-desc">1987'den beri babadan oğula geçen döküm ve sac şekillendirme tecrübesi.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon-box">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feat-2-title">Isı Verimliliği</h3>
+                    <p class="feature-desc" data-i18n="feat-2-desc">Akıllı iç duman kanalları ile maksimum ısı tasarrufu ve fırın performansı.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon-box">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feat-3-title">Kişiye Özel Tasarım</h3>
+                    <p class="feature-desc" data-i18n="feat-3-desc">İstediğiniz ölçü, renk ve kapak seçenekleriyle sobanızı üretiyoruz.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon-box">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feat-4-title">Hızlı & Güvenli Nakliye</h3>
+                    <p class="feature-desc" data-i18n="feat-4-desc">Tüm Türkiye'ye ve yurt dışına özel sandıklı paketlerle güvenli gönderim.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. İNTERAKTİF SOBA ÖZELLEŞTİRİCİ (Stove Customizer) -->
+    <section id="customizer" class="customizer-section section-padding reveal">
+        <div class="container">
+            <div class="section-title-wrap">
+                <h2 class="section-title" data-i18n="cust-title">Kendi Sobanı Tasarla</h2>
+                <p class="section-subtitle" data-i18n="cust-subtitle">Yaşam alanınıza en uygun modeli seçin, emaye rengini belirleyin ve aksesuarlarını ekleyip teklif alın.</p>
+            </div>
+            
+            <div class="customizer-container">
+                <!-- Sol Kolon: Canlı Görsel Önizleme -->
+                <div class="customizer-visual">
+                    <div class="customizer-stove-glow fire-on"></div>
+                    <div class="stove-fire-overlay active"></div>
+                    <img src="images/soba-somine.png" alt="Tasarlanan Soba Önizleme" class="stove-base-preview">
+                    
+                    <!-- Fiyat Kutusu -->
+                    <div class="customizer-price-box">
+                        <span class="price-label" data-i18n="cust-price-lbl">Tahmini Yaklaşık Fiyat</span>
+                        <div class="price-val">18.500 TL</div>
+                    </div>
+                </div>
+                
+                <!-- Sağ Kolon: Özelleştirme Seçenekleri -->
+                <div class="customizer-options">
+                    
+                    <!-- Soba Tipi Seçimi -->
+                    <div class="option-group">
+                        <h4 class="option-title"><i class="fa-solid fa-layer-group"></i> <span data-i18n="cust-group-type">1. Soba Modeli Seçin</span></h4>
+                        <div class="option-grid">
+                            <div class="opt-card active" data-type="somine">
+                                <i class="fa-solid fa-door-open"></i>
+                                <span class="opt-name" data-i18n="cust-type-somine">Altın Süslü Kuzine</span>
+                                <span class="opt-price">18.500 TL</span>
+                            </div>
+                            <div class="opt-card" data-type="klasik">
+                                <i class="fa-solid fa-cubes"></i>
+                                <span class="opt-name" data-i18n="cust-type-klasik">Klasik Kuzine</span>
+                                <span class="opt-price">12.000 TL</span>
+                            </div>
+                            <div class="opt-card" data-type="kovali">
+                                <i class="fa-solid fa-fan"></i>
+                                <span class="opt-name" data-i18n="cust-type-kovali">Fanlı Soba</span>
+                                <span class="opt-price">21.000 TL</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Emaye Rengi Seçimi -->
+                    <div class="option-group">
+                        <h4 class="option-title"><i class="fa-solid fa-palette"></i> <span data-i18n="cust-group-color">2. Emaye Renk Seçeneği</span></h4>
+                        <div class="color-options">
+                            <!-- Mat Siyah -->
+                            <div class="color-dot active" data-color="siyah" style="background-color: #121316;" title="Mat Siyah"></div>
+                            <!-- Antik Kırmızı -->
+                            <div class="color-dot" data-color="kirmizi" style="background-color: #7b1d1d;" title="Antik Kırmızı (+1.500 TL)"></div>
+                            <!-- Kestane Kahve -->
+                            <div class="color-dot" data-color="kahve" style="background-color: #4e2b1f;" title="Kestane Kahve (+1.200 TL)"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Aksesuar Seçimi -->
+                    <div class="option-group">
+                        <h4 class="option-title"><i class="fa-solid fa-toolbox"></i> <span data-i18n="cust-group-acc">3. Ek Aksesuar ve Yedek Parçalar</span></h4>
+                        <div class="acc-list">
+                            <!-- Aksesuar 1 -->
+                            <div class="acc-item" data-acc="pipe">
+                                <div class="acc-info">
+                                    <div class="acc-checkbox"></div>
+                                    <span class="acc-name" data-i18n="cust-acc-pipe">Lüks Boru Seti (+3 Boru, 1 Dirsek, Duvar Sacı)</span>
+                                </div>
+                                <span class="acc-price">+1.200 TL</span>
+                            </div>
+                            <!-- Aksesuar 2 -->
+                            <div class="acc-item" data-acc="plate">
+                                <div class="acc-info">
+                                    <div class="acc-checkbox"></div>
+                                    <span class="acc-name" data-i18n="cust-acc-plate">Zemin Koruma Tablası (Emaye)</span>
+                                </div>
+                                <span class="acc-price">+800 TL</span>
+                            </div>
+                            <!-- Aksesuar 3 -->
+                            <div class="acc-item" data-acc="grid">
+                                <div class="acc-info">
+                                    <div class="acc-checkbox"></div>
+                                    <span class="acc-name" data-i18n="cust-acc-grid">Yedek Ağır Döküm Izgara</span>
+                                </div>
+                                <span class="acc-price">+600 TL</span>
+                            </div>
+                            <!-- Aksesuar 4 -->
+                            <div class="acc-item" data-acc="tray">
+                                <div class="acc-info">
+                                    <div class="acc-checkbox"></div>
+                                    <span class="acc-name" data-i18n="cust-acc-tray">Emaye Fırın Tepsisi</span>
+                                </div>
+                                <span class="acc-price">+400 TL</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Teklif / Sipariş Butonları -->
+                    <div class="customizer-action">
+                        <button id="btn-wa-order" class="btn btn-primary">
+                            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="cust-btn-whatsapp">WhatsApp ile Tasarımı Sipariş Et</span>
+                        </button>
+                        <a href="tel:+905342457908" class="btn btn-secondary">
+                            <i class="fa-solid fa-phone"></i> <span data-i18n="cust-btn-phone">Doğrudan Telefon ile Teklif Al</span>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ISI HESAPLAMA ARACI (Stove Calculator) -->
+    <section id="calculator" class="calculator-section section-padding reveal">
+        <div class="container">
+            <div class="section-title-wrap">
+                <h2 class="section-title" data-i18n="calc-title">Kuzine Isı Hesaplayıcı</h2>
+                <p class="section-subtitle" data-i18n="calc-subtitle">Odanızın boyutuna ve yalıtım durumuna göre en verimli soba modelini ve boru ihtiyacını bulun.</p>
+            </div>
+            
+            <div class="calculator-wrapper">
+                <!-- Sol Kısım: Form Parametreleri -->
+                <div class="calc-form">
+                    <!-- Oda Metrekaresi -->
+                    <div class="form-group">
+                        <label class="form-label">
+                            <span data-i18n="calc-lbl-size">Oda Genişliği (Metrekare):</span>
+                            <strong><span id="calc-size-val">35</span> m²</strong>
+                        </label>
+                        <div class="slider-container">
+                            <input type="range" id="calc-size" class="range-slider" min="10" max="120" value="35">
+                        </div>
+                    </div>
+                    
+                    <!-- Yalıtım Durumu -->
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="calc-lbl-ins">Bina Isı Yalıtım Durumu:</label>
+                        <div class="radio-grid">
+                            <div class="radio-card" data-ins="iyi">
+                                <i class="fa-solid fa-house-chimney-user"></i>
+                                <span class="radio-label" data-i18n="calc-ins-good">İyi Yalıtım</span>
+                            </div>
+                            <div class="radio-card active" data-ins="orta">
+                                <i class="fa-solid fa-house-chimney"></i>
+                                <span class="radio-label" data-i18n="calc-ins-mid">Standart / Orta</span>
+                            </div>
+                            <div class="radio-card" data-ins="zayif">
+                                <i class="fa-solid fa-house-crack"></i>
+                                <span class="radio-label" data-i18n="calc-ins-bad">Zayıf / Yalıtımsız</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button id="btn-calculate" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                        <i class="fa-solid fa-calculator"></i> <span data-i18n="calc-btn">Hesaplamayı Yap</span>
+                    </button>
+                </div>
+                
+                <!-- Sağ Kısım: Sonuç ve Tavsiye Raporu -->
+                <div class="calc-results">
+                    <!-- Başlangıç Boş Ekranı -->
+                    <div class="result-placeholder">
+                        <i class="fa-solid fa-fire-burner"></i>
+                        <p data-i18n="calc-placeholder">Değerleri girip hesapla butonuna bastığınızda en uygun kuzine modeli burada listelenecektir.</p>
+                    </div>
+                    
+                    <!-- Dinamik Sonuç Raporu -->
+                    <div class="result-content">
+                        <h3 class="result-heading" data-i18n="calc-res-title">Isınma İhtiyacı Analiz Raporu</h3>
+                        
+                        <div class="result-stats-grid">
+                            <div class="result-stat-card">
+                                <span class="result-stat-lbl" data-i18n="calc-res-output">Gerekli Isı Gücü</span>
+                                <div id="res-kw" class="result-stat-val">2.8 kW</div>
+                            </div>
+                            <div class="result-stat-card">
+                                <span class="result-stat-lbl" data-i18n="calc-res-pipe">Önerilen Boru Boyu</span>
+                                <div id="res-pipe" class="result-stat-val">4 Metre</div>
+                            </div>
+                        </div>
+                        
+                        <div class="recommended-product-wrapper">
+                            <h4 style="margin-bottom: 12px; font-size: 0.95rem; color: var(--text-muted);" data-i18n="calc-res-recom">Tavsiye Edilen Kuzine Modelimiz</h4>
+                            <div class="recommended-product">
+                                <img id="res-model-img" src="images/soba-somine.png" alt="Önerilen Model" class="recommended-img">
+                                <div class="recommended-info">
+                                    <h4 id="res-model-title">Döküm Şömine Kuzine Soba</h4>
+                                    <p data-i18n="calc-res-desc">Seçilen oda hacmi için ideal yanma ve pişirme performansı sunar.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#customizer" class="btn btn-primary" style="width: 100%;">
+                            <i class="fa-solid fa-sliders"></i> <span data-i18n="nav-customizer">Soba Tasarla</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. ÜRÜN KATALOĞU (Products Catalog) -->
+    <section id="products" class="products-section section-padding reveal">
+        <div class="container">
+            <div class="section-title-wrap">
+                <h2 class="section-title" data-i18n="prod-title">Soba Kataloğumuz</h2>
+                <p class="section-subtitle" data-i18n="prod-subtitle">Kumru'daki imalathanemizde titizlikle ürettiğimiz en popüler modellerimiz.</p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Ürün 1: Şömine -->
+                <div class="product-card">
+                    <span class="product-tag" data-i18n="prod-badge-new">En Çok Satan</span>
+                    <div class="product-img-wrap">
+                        <img src="images/soba-somine.png" alt="Döküm Şömine Kuzine">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-title" data-i18n="cust-type-somine">Altın Süslü Kuzine</h3>
+                        <p class="product-desc">Geleneksel motifler, el işçiliği altın sarısı döküm köşeler ve Kumru Soba kabartma amblemiyle usta işi, en prestijli otantik kuzine modelimiz.</p>
+                        
+                        <div class="product-specs">
+                            <div class="spec-line"><i class="fa-solid fa-arrows-left-right"></i> <span data-i18n="prod-spec-dim">Ebatlar</span>: <strong>80x50x70 cm</strong></div>
+                            <div class="spec-line"><i class="fa-solid fa-weight-hanging"></i> <span data-i18n="prod-spec-weight">Ağırlık</span>: <strong>75 Kg</strong></div>
+                            <div class="spec-line"><i class="fa-solid fa-utensils"></i> <span data-i18n="prod-spec-oven">Fırın Ebatı</span>: <strong>42x42x20 cm</strong></div>
+                            <div class="spec-line"><i class="fa-solid fa-house"></i> <span data-i18n="prod-spec-cap">Isıtma Hacmi</span>: <strong>~75 m²</strong></div>
+                        </div>
+                        
+                        <div class="product-footer">
+                            <div class="product-price">18.500<span> TL</span></div>
+                            <a target="_blank" href="https://wa.me/905342457908?text=Altın%20Süslü%20Kuzine%20sobanız%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-secondary" style="padding: 10px 18px;" data-i18n="prod-btn-inquire">Fiyat Sor / Detay Al</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ürün 2: Klasik Kuzine -->
+                <div class="product-card">
+                    <span class="product-tag" data-i18n="prod-badge-classic" style="background-color: var(--secondary);">Geleneksel</span>
+                    <div class="product-img-wrap">
+                        <img src="images/soba-klasik.png" alt="Klasik Fırınlı Kuzine Soba">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-title" data-i18n="cust-type-klasik">Klasik Kuzine</h3>
+                        <p class="product-desc">Kumru'nun meşhur kara sac kuzine tasarımı. Isıyı anında dışarı veren yüksek verimli dayanıklı sac gövde, geniş yakma haznesi ve geleneksel pişirme fırınıyla nostaljik ve güçlü.</p>
+                        
+                        <div class="product-specs">
+                            <div class="spec-line"><i class="fa-solid fa-arrows-left-right"></i> <span data-i18n="prod-spec-dim">Ebatlar</span>: <strong>85x50x70 cm</strong></div>
+                            <div class="spec-line"><i class="fa-solid fa-weight-hanging"></i> <span data-i18n="prod-spec-weight">Ağırlık</span>: <strong>80 Kg</strong></div>
+                            <div class="spec-line"><i class="fa-solid fa-utensils"></i> <span data-i18n="prod-spec-oven">Fırın Ebatı</span>: <strong>45x45x20 cm</strong></div>
+                            <div class="spec-line"><i class="fa-solid fa-house"></i> <span data-i18n="prod-spec-cap">Isıtma Hacmi</span>: <strong>~70 m²</strong></div>
+                        </div>
+                        
+                        <div class="product-footer">
+                            <div class="product-price">12.000<span> TL</span></div>
+                            <a target="_blank" href="https://wa.me/905342457908?text=Klasik%20Kuzine%20sobanız%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-secondary" style="padding: 10px 18px;" data-i18n="prod-btn-inquire">Fiyat Sor / Detay Al</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ürün 3: Fanlı Soba -->
+                <div class="product-card">
+                    <span class="product-tag" style="background-color: var(--primary);">Yüksek Güç</span>
+                    <div class="product-img-wrap">
+                        <img src="images/soba-kovali.png" alt="Klasik Fanlı Soba">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-title" data-i18n="cust-type-kovali">Fanlı Soba</h3>
+                        <p class="product-desc">Geniş atölyeler, kafeler, restoranlar ve yüksek tavanlı alanlar için özel ısı boruları ve dahili 220V fan üfleme sistemiyle donatılmış ultra güçlü katı yakıtlı ısıtma sistemimiz.</p>
+                        
+                        <div class="product-specs">
+                            <div class="spec-line"><i class="fa-solid fa-arrows-left-right"></i> <span data-i18n="prod-spec-dim">Ebatlar</span>: <strong>60x60x135 cm</strong></div>
+                            <div class="spec-line"><i class="fa-solid fa-weight-hanging"></i> <span data-i18n="prod-spec-weight">Ağırlık</span>: <strong>140 Kg</strong></div>
+                            <div class="spec-line"><i class="fa-solid fa-wind"></i> <span>Boru Tesisatı</span>: <strong>18 Isı Borusu / 220V Fan</strong></div>
+                            <div class="spec-line"><i class="fa-solid fa-house"></i> <span data-i18n="prod-spec-cap">Isıtma Hacmi</span>: <strong>~250 m²</strong></div>
+                        </div>
+                        
+                        <div class="product-footer">
+                            <div class="product-price">21.000<span> TL</span></div>
+                            <a target="_blank" href="https://wa.me/905342457908?text=Fanlı%20Soba%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-secondary" style="padding: 10px 18px;" data-i18n="prod-btn-inquire">Fiyat Sor / Detay Al</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ürün 4: Kat Kaloriferi -->
+                <div class="product-card">
+                    <span class="product-tag" data-i18n="prod-badge-100local" style="background-color: #6366f1;">100% Yerli Üretim</span>
+                    <div class="product-img-wrap">
+                        <img src="images/kat-kaloriferi.png" alt="Kat Kaloriferi">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-title" data-i18n="prod-title-kat-kaloriferi">Kat Kaloriferi</h3>
+                        <p class="product-desc" data-i18n="prod-desc-kat-kaloriferi">Dijital kontrol paneli, otomatik sıcaklık ayarı ve çift daire ısıtma gücüne sahip %100 yerli üretim katı yakıtlı kat kaloriferi. Apartman ve müstakil evler için ideal merkezi ısıtma çözümü.</p>
+                        
+                        <div class="product-specs">
+                            <div class="spec-line"><i class="fa-solid fa-arrows-left-right"></i> <span data-i18n="prod-spec-dim">Ebatlar</span>: <strong>50x60x110 cm</strong></div>
+                            <div class="spec-line"><i class="fa-solid fa-weight-hanging"></i> <span data-i18n="prod-spec-weight">Ağırlık</span>: <strong>160 Kg</strong></div>
+                            <div class="spec-line"><i class="fa-solid fa-temperature-half"></i> <span data-i18n="prod-spec-control">Kontrol</span>: <strong data-i18n="prod-spec-control-val">Dijital Panel / Otomatik</strong></div>
+                            <div class="spec-line"><i class="fa-solid fa-building"></i> <span data-i18n="prod-spec-power">Isıtma Gücü</span>: <strong data-i18n="prod-spec-power-val">2 Daire Kapasiteli</strong></div>
+                        </div>
+                        
+                        <div class="product-footer">
+                            <div class="product-price">28.500<span> TL</span></div>
+                            <a target="_blank" href="https://wa.me/905342457908?text=Kat%20Kaloriferi%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-secondary" style="padding: 10px 18px;" data-i18n="prod-btn-inquire">Fiyat Sor / Detay Al</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. HİKAYEMİZ / ZAMAN TÜNELİ (History Timeline) -->
+    <section id="story" class="history-section section-padding reveal">
+        <div class="container">
+            <div class="section-title-wrap">
+                <h2 class="section-title" data-i18n="hist-title">1987'den Bugüne Hikayemiz</h2>
+                <p class="section-subtitle" data-i18n="hist-subtitle">Bir demirci atölyesinden tüm Türkiye'ye uzanan sıcaklık serüveni.</p>
+            </div>
+            
+            <div class="timeline">
+                <!-- Item 1 -->
+                <div class="timeline-item timeline-item-odd">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">1987</div>
+                        <h4 class="timeline-title" data-i18n="hist-1-title">Atölyenin Temeli</h4>
+                        <p class="timeline-desc" data-i18n="hist-1-desc">Ordu Kumru'da usta demirciler tarafından ilk el yapımı kuzine üretildi.</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="timeline-item timeline-item-even">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">2005</div>
+                        <h4 class="timeline-title" data-i18n="hist-2-title">Markalaşma ve Emaye Devrimi</h4>
+                        <p class="timeline-desc" data-i18n="hist-2-desc">Ürünlerin dayanıklılığını artırmak için yüksek ısı emaye kaplama teknolojisine geçildi.</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="timeline-item timeline-item-odd">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">2018</div>
+                        <h4 class="timeline-title" data-i18n="hist-3-title">Şömine Serisi</h4>
+                        <p class="timeline-desc" data-i18n="hist-3-desc">Büyük camlı, şömine görünümlü modern döküm kuzineler ürün gamına eklendi.</p>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="timeline-item timeline-item-even">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">2026</div>
+                        <h4 class="timeline-title" data-i18n="hist-4-title">Geleceğe Sıcaklık</h4>
+                        <p class="timeline-desc" data-i18n="hist-4-desc">Online sipariş altyapısı ve yenilenen modern vizyonumuzla sıcacık yuvalar kurmaya devam ediyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. DİNAMİK RESİM GALERİSİ (Gallery) -->
+    <section id="gallery" class="gallery-section section-padding reveal">
+        <div class="container">
+            <div class="section-title-wrap">
+                <h2 class="section-title" data-i18n="gal-title">Sizden Gelenler ve Atölye</h2>
+                <p class="section-subtitle" data-i18n="gal-subtitle">Kumru Sobalarının evlerdeki sıcacık duruşu ve üretim aşamalarından kareler.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Resim 1 -->
+                <div class="gallery-item">
+                    <img src="images/hero-bg.png" alt="Dağ Evi Kurulumu">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h5>Dağ Evi Kuzine Keyfi</h5>
+                            <p>Bolu Bungalov Ev Kurulumu</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Resim 2 -->
+                <div class="gallery-item">
+                    <img src="images/soba-somine.png" alt="Şömine Model Kurulum">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h5>Döküm Şömine Oturma Odası</h5>
+                            <p>Trabzon Taş Ev Uygulaması</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Resim 3 -->
+                <div class="gallery-item">
+                    <img src="images/soba-klasik.png" alt="Klasik Model Mutfak">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h5>Kuzineli Köy Mutfağı</h5>
+                            <p>Ordu Kumru Ev Kurulumu</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Resim 4 -->
+                <div class="gallery-item">
+                    <img src="images/soba-kovali.png" alt="Atölye Üretim Aşaması">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h5>Atölyeden Kareler</h5>
+                            <p>Kuzine Soba Gövde Montajı</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. İLETİŞİM VE HARİTA (Contact) -->
+    <section id="contact" class="contact-section section-padding reveal">
+        <div class="container">
+            <div class="section-title-wrap">
+                <h2 class="section-title" data-i18n="cont-title">Bizimle İletişime Geçin</h2>
+                <p class="section-subtitle" data-i18n="cont-subtitle">Sorularınız, toptan sipariş talepleriniz veya detaylı bilgi için bize ulaşabilirsiniz.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <!-- Sol Kolon: Bilgiler -->
+                <div class="contact-info-panel">
+                    <!-- Kart 1: Adres -->
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <div class="contact-det">
+                            <h4 data-i18n="cont-address-title">Adresimiz</h4>
+                            <p data-i18n="cont-address-desc">Kadıncık, Şehit Neşe Küme Evleri No: 1, 52800 Kumru/Ordu</p>
+                        </div>
+                    </div>
+                    <!-- Kart 2: Telefon -->
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                        <div class="contact-det">
+                            <h4 data-i18n="cont-phone-title">Telefon Hatlarımız</h4>
+                            <a href="tel:+905342457908">+90 534 245 79 08</a>
+                        </div>
+                    </div>
+                    <!-- Kart 3: Email -->
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                        <div class="contact-det">
+                            <h4 data-i18n="cont-email-title">E-Posta Adresimiz</h4>
+                            <a href="mailto:info@kumrusoba.com">info@kumrusoba.com</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Sosyal Medya Butonları -->
+                    <div style="margin-top: 10px;">
+                        <h4 style="font-size: 1rem; margin-bottom: 12px;" data-i18n="cont-social-title">Sosyal Medyada Biz</h4>
+                        <div class="social-links">
+                            <a target="_blank" href="https://www.facebook.com/p/Kumru-Soba-100054214401827/?locale=tr_TR" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a target="_blank" href="https://www.instagram.com/kumrusoba/" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a target="_blank" href="https://wa.me/905342457908" class="social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sağ Kolon: Google Harita Entegrasyonu -->
+                <div class="contact-map-panel">
+                    <!-- Google Maps Iframe, Kumru Ordu Şehit Neşe Küme Evleri Konumu -->
+                    <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.6893663673756!2d37.2608466765792!3d41.0320475175908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4062a4d339396fb9%3A0xe54e6012cc4a71bf!2zS2FkxLFuycWxrSwgxZ9odC4gTmXFn2UgS8O8bWUgRXY!5e0!3m2!1str!2str!4v1717281000000!5m2!1str!2str" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Kumru Soba Google Harita Konumu"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="#home" class="footer-logo">
+                        <i class="fa-solid fa-fire-flame-curved"></i>
+                        KUMRU<span>SOBA</span>
+                    </a>
+                    <p style="margin-top: 16px; max-width: 380px; font-size: 0.85rem;" data-i18n="foot-desc">
+                        Kumru Soba, 1987'den bu yana Ordu Kumru'da döküm ve sac kuzine soba imalatında kalitenin ve güvenin adresidir.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#home" class="footer-link" data-i18n="nav-home">Ana Sayfa</a>
+                    <a href="#customizer" class="footer-link" data-i18n="nav-customizer">Soba Tasarla</a>
+                    <a href="#calculator" class="footer-link" data-i18n="nav-calculator">Isı Hesaplayıcı</a>
+                    <a href="#products" class="footer-link" data-i18n="nav-products">Ürünlerimiz</a>
+                    <a href="#story" class="footer-link" data-i18n="nav-story">Hikayemiz</a>
+                    <a href="#contact" class="footer-link" data-i18n="nav-contact">İletişim</a>
+                    <a href="admin.html" class="footer-link" target="_blank" style="color: #ff5722; font-weight: bold; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-user-gear"></i> <span data-i18n="nav-admin">Yönetici Paneli</span></a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p id="footer-copy" data-i18n="foot-copy">&copy; 2026 Kumru Soba. Tüm Hakları Saklıdır.</p>
+                <p style="font-size: 0.8rem; opacity: 0.8;" data-i18n="foot-by">DeepMind Antigravity Tarafından Gururla Tasarlandı.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 11. FLOATING WHATSAPP BUTTON WIDGET -->
+    <div class="whatsapp-widget">
+        <div class="whatsapp-bubble" data-i18n="wa-bubble">Merhaba! Nasıl yardımcı olabilirim?</div>
+        <a target="_blank" href="https://wa.me/905342457908" class="whatsapp-btn" aria-label="Contact on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- 12. DİNAMİK LIGHTBOX (GALERİ BÜYÜTÜCÜ) -->
+    <div class="lightbox">
+        <button class="lightbox-close" aria-label="Close Gallery"><i class="fa-solid fa-xmark"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="Gallery Preview" class="lightbox-img">
+            <div class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Custom Logic Script -->
+    <script src="js/app.js"></script>
+</body>
+</html>

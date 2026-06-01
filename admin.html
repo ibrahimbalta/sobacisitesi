@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumru Soba - Yönetici Paneli</title>
+    <!-- FontAwesome Pro Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Custom Admin Panel Stylesheet -->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- Ultra Premium Login Screen Overlay -->
+    <div class="login-overlay" id="login-screen">
+        <div class="login-card">
+            <div class="login-logo">
+                <i class="fa-solid fa-fire-flame-curved animate-flame"></i>
+                <h2>KUMRU<span>SOBA</span></h2>
+                <p>Yönetici Girişi</p>
+            </div>
+            
+            <form id="login-form">
+                <div class="form-group" style="margin-bottom: 24px;">
+                    <label for="admin-password">Yönetici Şifresi</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="admin-password" class="input-glow" placeholder="Şifrenizi girin..." required>
+                        <button type="button" class="btn-toggle-password" id="btn-toggle-pw" aria-label="Toggle Password Visibility">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-submit" style="width: 100%; padding: 12px; justify-content: center; font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-right-to-bracket"></i> Sisteme Giriş Yap
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="admin-container" id="admin-dashboard">
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo-section">
+                <i class="fa-solid fa-fire-flame-curved"></i>
+                <div>
+                    KUMRU<span>SOBA</span>
+                </div>
+                <div class="admin-badge">Yönetim</div>
+            </div>
+
+            <nav class="nav-list">
+                <li class="nav-item active" data-tab="hero">
+                    <button><i class="fa-solid fa-house-chimney-user"></i> <span>Genel / Kahraman</span></button>
+                </li>
+                <li class="nav-item" data-tab="products">
+                    <button><i class="fa-solid fa-layer-group"></i> <span>Ürün Kataloğu</span></button>
+                </li>
+                <li class="nav-item" data-tab="timeline">
+                    <button><i class="fa-solid fa-timeline"></i> <span>Tarihçe & Zaman</span></button>
+                </li>
+                <li class="nav-item" data-tab="contact">
+                    <button><i class="fa-solid fa-address-book"></i> <span>İletişim & Harita</span></button>
+                </li>
+                <li class="nav-item" data-tab="backup">
+                    <button><i class="fa-solid fa-database"></i> <span>Veri Yönetimi</span></button>
+                </li>
+            </nav>
+
+            <div class="sidebar-footer" style="display: flex; flex-direction: column; gap: 10px;">
+                <a href="index.html" class="btn-view-site" target="_blank">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <span>Siteyi Görüntüle</span>
+                </a>
+                <button type="button" class="btn-view-site" id="btn-admin-logout" style="background: rgba(239, 68, 68, 0.08); border-color: rgba(239, 68, 68, 0.2); color: #ef4444;">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Çıkış Yap</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Workspace Area -->
+        <main class="main-content">
+            <!-- Header Panel with Title and Global Save -->
+            <div class="header-panel">
+                <div class="header-title">
+                    <h2 id="current-tab-title">Genel & Kahraman Yönetimi</h2>
+                    <p id="current-tab-desc">Ana sayfanın giriş başlıklarını, karşılama yazılarını ve istatistik alanlarını güncelleyin.</p>
+                </div>
+                <button type="button" class="btn-save-global" id="btn-save-all">
+                    <i class="fa-solid fa-floppy-disk"></i> Değişiklikleri Kaydet
+                </button>
+            </div>
+
+            <!-- TAB 1: HERO & GENERAL SETTINGS -->
+            <section class="tab-panel active" id="panel-hero">
+                <div class="card-glass">
+                    <div class="card-title">
+                        <i class="fa-solid fa-rectangle-ad"></i> Karşılama Alanı (Hero Section) İçerikleri
+                    </div>
+                    
+                    <div class="lang-split-box">
+                        <!-- Türkçe İçerikler -->
+                        <div class="lang-column">
+                            <div class="lang-indicator tr-color"><i class="fa-solid fa-flag"></i> Türkçe İçerik</div>
+                            
+                            <div class="form-group">
+                                <label for="hero-badge-tr">Hero Rozet Yazısı (Badge)</label>
+                                <input type="text" id="hero-badge-tr" class="input-glow" placeholder="Örn: 1987'den Bugüne Ustalıkla">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="hero-title-tr">Ana Başlık (Title - HTML Destekli)</label>
+                                <input type="text" id="hero-title-tr" class="input-glow" placeholder="Örn: Sıcak Yuvaların Sırrı: <span>Kumru</span>">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="hero-desc-tr">Açıklama Yazısı (Description)</label>
+                                <textarea id="hero-desc-tr" class="input-glow" placeholder="Karşılama açıklama metni..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="hero-btn-custom-tr">Özelleştirici Buton Yazısı</label>
+                                <input type="text" id="hero-btn-custom-tr" class="input-glow" placeholder="Soba Tasarla">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="hero-btn-catalog-tr">Katalog Buton Yazısı</label>
+                                <input type="text" id="hero-btn-catalog-tr" class="input-glow" placeholder="Kataloğu İncele">
+                            </div>
+                        </div>
+
+                        <!-- İngilizce İçerikler -->
+                        <div class="lang-column">
+                            <div class="lang-indicator en-color"><i class="fa-solid fa-flag"></i> İngilizce İçerik (English)</div>
+                            
+                            <div class="form-group">
+                                <label for="hero-badge-en">Hero Rozet Yazısı (Badge - EN)</label>
+                                <input type="text" id="hero-badge-en" class="input-glow" placeholder="Örn: Craftsmanship Since 1987">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="hero-title-en">Ana Başlık (Title - EN - HTML Destekli)</label>
+                                <input type="text" id="hero-title-en" class="input-glow" placeholder="Örn: Secret of Cozy Homes: <span>Kumru</span>">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="hero-desc-en">Açıklama Yazısı (Description - EN)</label>
+                                <textarea id="hero-desc-en" class="input-glow" placeholder="English description..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="hero-btn-custom-en">Özelleştirici Buton Yazısı (EN)</label>
+                                <input type="text" id="hero-btn-custom-en" class="input-glow" placeholder="Design Stove">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="hero-btn-catalog-en">Katalog Buton Yazısı (EN)</label>
+                                <input type="text" id="hero-btn-catalog-en" class="input-glow" placeholder="View Catalog">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-glass">
+                    <div class="card-title">
+                        <i class="fa-solid fa-chart-simple"></i> Sayısal İstatistik Alanları (Stats Box)
+                    </div>
+                    
+                    <div class="form-grid">
+                        <!-- Stat 1 -->
+                        <div class="form-group" style="border: 1px solid var(--border-color); padding: 16px; border-radius: 12px; background: rgba(0,0,0,0.15)">
+                            <label style="color: var(--primary);">İstatistik 1 (Deneyim)</label>
+                            <input type="text" id="stat-1-val" class="input-glow" placeholder="Örn: 39+" style="margin-top: 6px;">
+                            <input type="text" id="stat-1-tr" class="input-glow" placeholder="TR Etiket: Yıllık Deneyim" style="margin-top: 8px;">
+                            <input type="text" id="stat-1-en" class="input-glow" placeholder="EN Etiket: Years Experience" style="margin-top: 8px;">
+                        </div>
+                        <!-- Stat 2 -->
+                        <div class="form-group" style="border: 1px solid var(--border-color); padding: 16px; border-radius: 12px; background: rgba(0,0,0,0.15)">
+                            <label style="color: var(--primary);">İstatistik 2 (Ustalık)</label>
+                            <input type="text" id="stat-2-val" class="input-glow" placeholder="Örn: 100%" style="margin-top: 6px;">
+                            <input type="text" id="stat-2-tr" class="input-glow" placeholder="TR Etiket: Usta İşçilik" style="margin-top: 8px;">
+                            <input type="text" id="stat-2-en" class="input-glow" placeholder="EN Etiket: Master Craftsmen" style="margin-top: 8px;">
+                        </div>
+                        <!-- Stat 3 -->
+                        <div class="form-group form-group-full" style="border: 1px solid var(--border-color); padding: 16px; border-radius: 12px; background: rgba(0,0,0,0.15)">
+                            <label style="color: var(--primary);">İstatistik 3 (İhracat)</label>
+                            <input type="text" id="stat-3-val" class="input-glow" placeholder="Örn: 12+" style="margin-top: 6px;">
+                            <input type="text" id="stat-3-tr" class="input-glow" placeholder="TR Etiket: Ülkeye Gönderim" style="margin-top: 8px;">
+                            <input type="text" id="stat-3-en" class="input-glow" placeholder="EN Etiket: Countries Exported" style="margin-top: 8px;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 2: PRODUCTS CATALOG -->
+            <section class="tab-panel" id="panel-products">
+                <div class="card-glass">
+                    <div class="card-title">
+                        <i class="fa-solid fa-boxes-packing"></i> Aktif Ürün Katalog Listesi
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+                        Buradan yeni ürün ekleyebilir, mevcut ürünleri silebilir veya detaylarını güncelleyebilirsiniz. Güncellemeler soba özelleştirici ile anında senkronize olur.
+                    </p>
+                    
+                    <div class="admin-products-list" id="products-list-container">
+                        <!-- Dynamically filled by JS -->
+                        <div class="btn-add-card" id="btn-add-product">
+                            <i class="fa-solid fa-plus-circle"></i>
+                            <span>Yeni Ürün Ekle</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 3: TIMELINE & HISTORY -->
+            <section class="tab-panel" id="panel-timeline">
+                <div class="card-glass">
+                    <div class="card-title">
+                        <i class="fa-solid fa-clock-rotate-left"></i> Tarihçe Zaman Tüneli Adımları
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+                        Kuruluş yıllarından bugüne uzanan başarı kilometre taşlarını yönetin. Kartlar otomatik olarak zig-zag düzeninde ana sayfaya render edilir.
+                    </p>
+                    
+                    <div class="admin-timeline-list" id="timeline-list-container">
+                        <!-- Dynamically filled by JS -->
+                    </div>
+                    
+                    <button type="button" class="btn-submit" id="btn-add-timeline" style="margin-top: 24px; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-plus"></i> Yeni Milat Ekle
+                    </button>
+                </div>
+            </section>
+
+            <!-- TAB 4: CONTACT & MAPS -->
+            <section class="tab-panel" id="panel-contact">
+                <div class="card-glass">
+                    <div class="card-title">
+                        <i class="fa-solid fa-file-signature"></i> İletişim Bilgileri ve Sosyal Medya
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="contact-phone">Görünen Telefon Numarası</label>
+                            <input type="text" id="contact-phone" class="input-glow" placeholder="+90 534 245 79 08">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phone-raw">Ham WhatsApp/Arama Numarası (Sadece Sayı)</label>
+                            <input type="text" id="contact-phone-raw" class="input-glow" placeholder="905342457908">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">E-Posta Adresi</label>
+                            <input type="email" id="contact-email" class="input-glow" placeholder="info@kumrusoba.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-wa">Hızlı WhatsApp Linki</label>
+                            <input type="text" id="contact-wa" class="input-glow" placeholder="https://wa.me/905342457908">
+                        </div>
+                        
+                        <div class="form-group form-group-full">
+                            <label for="contact-address-tr">Fiziki Adres (Türkçe)</label>
+                            <input type="text" id="contact-address-tr" class="input-glow" placeholder="Kadıncık, Şehit Neşe Küme Evleri No: 1, 52800 Kumru/Ordu">
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="contact-address-en">Fiziki Adres (İngilizce)</label>
+                            <input type="text" id="contact-address-en" class="input-glow" placeholder="Kadincik, Sehit Nese Kume Evleri No: 1, 52800 Kumru/Ordu, Turkey">
+                        </div>
+                        
+                        <div class="form-group form-group-full">
+                            <label for="contact-map">Google Maps Iframe Embed Bağlantısı (iframe src)</label>
+                            <input type="text" id="contact-map" class="input-glow" placeholder="https://www.google.com/maps/embed?...">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-fb">Facebook Sayfası Linki</label>
+                            <input type="text" id="contact-fb" class="input-glow" placeholder="https://facebook.com/...">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-ig">Instagram Profil Linki</label>
+                            <input type="text" id="contact-ig" class="input-glow" placeholder="https://instagram.com/...">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 5: BACKUP & DATA PERSISTENCE -->
+            <section class="tab-panel" id="panel-backup">
+                <div class="card-glass">
+                    <div class="card-title">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Veri Senkronizasyonu & Yedekleme
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">
+                        Buradan yönetici paneli yapılandırmanızı dışa aktarabilir, içe aktarabilir veya tamamen fabrika ayarlarına sıfırlayabilirsiniz. 
+                    </p>
+                    
+                    <div class="backup-actions-grid">
+                        <button type="button" class="btn-backup" id="btn-export-json">
+                            <i class="fa-solid fa-file-export"></i>
+                            <span>Yapılandırmayı İndir (JSON)</span>
+                        </button>
+                        
+                        <button type="button" class="btn-backup" id="btn-trigger-import">
+                            <i class="fa-solid fa-file-import"></i>
+                            <span>Yapılandırma Yükle (JSON)</span>
+                            <input type="file" id="import-json-file" style="display: none;" accept=".json">
+                        </button>
+                        
+                        <button type="button" class="btn-backup danger-zone" id="btn-reset-defaults">
+                            <i class="fa-solid fa-trash-arrow-up"></i>
+                            <span>Fabrika Ayarlarına Dön</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-glass">
+                    <div class="card-title">
+                        <i class="fa-solid fa-lock"></i> Yönetici Giriş Şifresini Değiştir
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">
+                        Yönetici paneline girişte kullanılan şifreyi değiştirin. Varsayılan şifre: <code>kumru1987</code>'dir.
+                    </p>
+                    <div class="form-grid" style="grid-template-columns: 1fr 1fr; align-items: flex-end;">
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <label for="admin-change-pw-input">Yeni Giriş Şifresi</label>
+                            <input type="password" id="admin-change-pw-input" class="input-glow" placeholder="Yeni şifre girin...">
+                        </div>
+                        <button type="button" class="btn-submit" id="btn-change-password" style="padding: 12px; height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                            <i class="fa-solid fa-key"></i> Şifreyi Güncelle
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-glass">
+                    <div class="card-title">
+                        <i class="fa-solid fa-code"></i> Kalıcı Kod Yedekleme Alanı (Developer persist)
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Aşağıdaki JavaScript kod bloğu yaptığınız tüm özelleştirmeleri içerir. Bu kodu kopyalayarak <strong>`js/app.js`</strong> dosyanızın en üstündeki <code>defaultSiteContent</code> nesnesiyle değiştirirseniz, tarayıcı verileri silinse dahi özelleştirmeleriniz sitede **kalıcı varsayılan** olarak yüklenecektir!
+                    </p>
+                    
+                    <div class="export-code-panel">
+                        <button type="button" class="btn-submit" id="btn-copy-code" style="padding: 8px 16px; font-size: 0.85rem;">
+                            <i class="fa-solid fa-copy"></i> Kodu Panoya Kopyala
+                        </button>
+                        <pre><code id="code-persist-block">// Kod yükleniyor...</code></pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- PRODUCT DIALOG MODAL (ADD/EDIT) -->
+    <div class="modal" id="modal-product">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-product-title">Yeni Ürün Ekle</h3>
+                <button type="button" class="btn-modal-close" id="btn-close-prod-modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="prod-form-index">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="prod-form-id">Ürün Benzersiz Kimliği (ID - İngilizce karakter)</label>
+                        <input type="text" id="prod-form-id" class="input-glow" placeholder="Örn: somine, klasik, kat-kaloriferi">
+                    </div>
+                    <div class="form-group">
+                        <label for="prod-form-price">Fiyat (TL Cinsinden Sayı)</label>
+                        <input type="number" id="prod-form-price" class="input-glow" placeholder="Örn: 18500">
+                    </div>
+                    <div class="form-group form-group-full">
+                        <label for="prod-form-image">Görsel Yolu (images/ klasörü altındaki isim)</label>
+                        <input type="text" id="prod-form-image" class="input-glow" placeholder="Örn: images/soba-somine.png">
+                    </div>
+                    
+                    <div class="form-group form-group-full" style="border: 1px dashed var(--border-color); padding: 16px; border-radius: 12px;">
+                        <h4 style="font-size: 0.85rem; color: var(--primary); margin-bottom: 12px;"><i class="fa-solid fa-flag"></i> Türkçe Dil Alanları</h4>
+                        <div class="form-group">
+                            <label for="prod-form-title-tr">Ürün Adı (TR)</label>
+                            <input type="text" id="prod-form-title-tr" class="input-glow" placeholder="Örn: Altın Süslü Kuzine">
+                        </div>
+                        <div class="form-group">
+                            <label for="prod-form-tag-tr">Etiket (TR)</label>
+                            <input type="text" id="prod-form-tag-tr" class="input-glow" placeholder="Örn: En Çok Satan">
+                        </div>
+                        <div class="form-group">
+                            <label for="prod-form-desc-tr">Ürün Açıklaması (TR)</label>
+                            <textarea id="prod-form-desc-tr" class="input-glow" placeholder="Ürün özelliklerini ve kalitesini anlatan metin..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-full" style="border: 1px dashed var(--border-color); padding: 16px; border-radius: 12px;">
+                        <h4 style="font-size: 0.85rem; color: var(--accent); margin-bottom: 12px;"><i class="fa-solid fa-flag"></i> İngilizce Dil Alanları (English)</h4>
+                        <div class="form-group">
+                            <label for="prod-form-title-en">Ürün Adı (EN)</label>
+                            <input type="text" id="prod-form-title-en" class="input-glow" placeholder="Örn: Golden Kuzine">
+                        </div>
+                        <div class="form-group">
+                            <label for="prod-form-tag-en">Etiket (EN)</label>
+                            <input type="text" id="prod-form-tag-en" class="input-glow" placeholder="Örn: Best Seller">
+                        </div>
+                        <div class="form-group">
+                            <label for="prod-form-desc-en">Ürün Açıklaması (EN)</label>
+                            <textarea id="prod-form-desc-en" class="input-glow" placeholder="Product description in English..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Specs Management (4 standardized lines) -->
+                    <div class="form-group form-group-full" style="border: 1px dashed var(--border-color); padding: 16px; border-radius: 12px;">
+                        <h4 style="font-size: 0.85rem; color: var(--text-main); margin-bottom: 12px;"><i class="fa-solid fa-screwdriver-wrench"></i> Ürün Teknik Özellikleri (4 Çizgi)</h4>
+                        
+                        <!-- Spec 1: Dimensions -->
+                        <div class="form-grid" style="margin-bottom: 12px;">
+                            <div class="form-group">
+                                <label>1. Özellik İkonu</label>
+                                <input type="text" id="spec-icon-1" class="input-glow" placeholder="fa-arrows-left-right" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>1. Özellik TR / EN Etiketi</label>
+                                <div style="display: flex; gap: 8px;">
+                                    <input type="text" id="spec-tr-label-1" class="input-glow" placeholder="Ebatlar" readonly style="width: 50%;">
+                                    <input type="text" id="spec-en-label-1" class="input-glow" placeholder="Dimensions" readonly style="width: 50%;">
+                                </div>
+                            </div>
+                            <div class="form-group form-group-full">
+                                <label>1. Özellik Değeri (Ebat Değeri)</label>
+                                <input type="text" id="spec-val-1" class="input-glow" placeholder="Örn: 80x50x70 cm">
+                            </div>
+                        </div>
+                        
+                        <!-- Spec 2: Weight -->
+                        <div class="form-grid" style="margin-bottom: 12px;">
+                            <div class="form-group">
+                                <label>2. Özellik İkonu</label>
+                                <input type="text" id="spec-icon-2" class="input-glow" placeholder="fa-weight-hanging" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>2. Özellik TR / EN Etiketi</label>
+                                <div style="display: flex; gap: 8px;">
+                                    <input type="text" id="spec-tr-label-2" class="input-glow" placeholder="Ağırlık" readonly style="width: 50%;">
+                                    <input type="text" id="spec-en-label-2" class="input-glow" placeholder="Weight" readonly style="width: 50%;">
+                                </div>
+                            </div>
+                            <div class="form-group form-group-full">
+                                <label>2. Özellik Değeri (Ağırlık Değeri)</label>
+                                <input type="text" id="spec-val-2" class="input-glow" placeholder="Örn: 75 Kg">
+                            </div>
+                        </div>
+
+                        <!-- Spec 3: Custom (Fırın/Boru/Kontrol) -->
+                        <div class="form-grid" style="margin-bottom: 12px;">
+                            <div class="form-group">
+                                <label>3. Özellik İkonu (FontAwesome)</label>
+                                <input type="text" id="spec-icon-3" class="input-glow" placeholder="fa-utensils, fa-wind vb.">
+                            </div>
+                            <div class="form-group">
+                                <label>3. Özellik TR / EN Başlığı</label>
+                                <div style="display: flex; gap: 8px;">
+                                    <input type="text" id="spec-tr-label-3" class="input-glow" placeholder="Örn: Fırın Ebatı" style="width: 50%;">
+                                    <input type="text" id="spec-en-label-3" class="input-glow" placeholder="Örn: Oven Size" style="width: 50%;">
+                                </div>
+                            </div>
+                            <div class="form-group form-group-full">
+                                <label>3. Özellik Değeri</label>
+                                <input type="text" id="spec-val-3" class="input-glow" placeholder="Örn: 42x42x20 cm">
+                            </div>
+                        </div>
+
+                        <!-- Spec 4: Capacity -->
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>4. Özellik İkonu (FontAwesome)</label>
+                                <input type="text" id="spec-icon-4" class="input-glow" placeholder="fa-house, fa-building vb.">
+                            </div>
+                            <div class="form-group">
+                                <label>4. Özellik TR / EN Başlığı</label>
+                                <div style="display: flex; gap: 8px;">
+                                    <input type="text" id="spec-tr-label-4" class="input-glow" placeholder="Örn: Isıtma Hacmi" style="width: 50%;">
+                                    <input type="text" id="spec-en-label-4" class="input-glow" placeholder="Örn: Heating Capacity" style="width: 50%;">
+                                </div>
+                            </div>
+                            <div class="form-group form-group-full">
+                                <label>4. Özellik Değeri</label>
+                                <input type="text" id="spec-val-4" class="input-glow" placeholder="Örn: ~75 m² veya 2 Daire Kapasiteli">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-cancel" id="btn-cancel-prod">İptal</button>
+                <button type="button" class="btn-submit" id="btn-save-prod">Ürünü Listeye Ekle</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TIMELINE DIALOG MODAL (ADD/EDIT) -->
+    <div class="modal" id="modal-timeline">
+        <div class="modal-content" style="max-width: 600px;">
+            <div class="modal-header">
+                <h3 id="modal-timeline-title">Yeni Kilometre Taşı Ekle</h3>
+                <button type="button" class="btn-modal-close" id="btn-close-time-modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="time-form-index">
+                <div class="form-grid" style="grid-template-columns: 1fr;">
+                    <div class="form-group">
+                        <label for="time-form-year">Yıl</label>
+                        <input type="text" id="time-form-year" class="input-glow" placeholder="Örn: 1987">
+                    </div>
+                    
+                    <div class="form-group" style="border: 1px dashed var(--border-color); padding: 16px; border-radius: 12px;">
+                        <h4 style="font-size: 0.85rem; color: var(--primary); margin-bottom: 12px;"><i class="fa-solid fa-flag"></i> Türkçe Dil Bilgileri</h4>
+                        <div class="form-group">
+                            <label for="time-form-title-tr">Başlık (TR)</label>
+                            <input type="text" id="time-form-title-tr" class="input-glow" placeholder="Örn: Atölyenin Temeli">
+                        </div>
+                        <div class="form-group">
+                            <label for="time-form-desc-tr">Açıklama (TR)</label>
+                            <textarea id="time-form-desc-tr" class="input-glow" placeholder="Ufak bir özet..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="border: 1px dashed var(--border-color); padding: 16px; border-radius: 12px;">
+                        <h4 style="font-size: 0.85rem; color: var(--accent); margin-bottom: 12px;"><i class="fa-solid fa-flag"></i> İngilizce Dil Bilgileri (English)</h4>
+                        <div class="form-group">
+                            <label for="time-form-title-en">Başlık (EN)</label>
+                            <input type="text" id="time-form-title-en" class="input-glow" placeholder="Örn: Foundation of the Shop">
+                        </div>
+                        <div class="form-group">
+                            <label for="time-form-desc-en">Açıklama (EN)</label>
+                            <textarea id="time-form-desc-en" class="input-glow" placeholder="English description..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-cancel" id="btn-cancel-time">İptal</button>
+                <button type="button" class="btn-submit" id="btn-save-time">Tarihçeye Ekle</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notification container -->
+    <div class="toast-container" id="toast-wrapper"></div>
+
+    <!-- Admin Panel Logic -->
+    <script src="js/admin.js"></script>
+</body>
+</html>
