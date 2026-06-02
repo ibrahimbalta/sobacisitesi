@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 id: "somine",
                 trTag: "En Çok Satan",
                 enTag: "Best Seller",
-                image: "images/soba-somine.png",
+                image: "/images/soba-somine.png",
                 trTitle: "Altın Süslü Kuzine",
                 enTitle: "Golden Kuzine",
                 trDesc: "Geleneksel motifler, el işçiliği altın sarısı döküm köşeler ve Kumru Soba kabartma amblemiyle usta işi, en prestijli otantik kuzine modelimiz.",
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 id: "klasik",
                 trTag: "Geleneksel",
                 enTag: "Traditional",
-                image: "images/soba-klasik.png",
+                image: "/images/soba-klasik.png",
                 trTitle: "Klasik Kuzine",
                 enTitle: "Classic Kuzine",
                 trDesc: "Kumru'nun meşhur kara sac kuzine tasarımı. Isıyı anında dışarı veren yüksek verimli dayanıklı sac gövde, geniş yakma haznesi ve geleneksel pişirme fırınıyla nostaljik ve güçlü.",
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 id: "kovali",
                 trTag: "Yüksek Güç",
                 enTag: "High Power",
-                image: "images/soba-kovali.png",
+                image: "/images/soba-kovali.png",
                 trTitle: "Fanlı Soba",
                 enTitle: "Fanned Stove",
                 trDesc: "Geniş atölyeler, kafeler, restoranlar ve yüksek tavanlı alanlar için özel ısı boruları ve dahili 220V fan üfleme sistemiyle donatılmış ultra güçlü katı yakıtlı ısıtma sistemimiz.",
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 id: "kat-kaloriferi",
                 trTag: "100% Yerli Üretim",
                 enTag: "100% Domestic Production",
-                image: "images/kat-kaloriferi.png",
+                image: "/images/kat-kaloriferi.png",
                 trTitle: "Kat Kaloriferi",
                 enTitle: "Floor Heating Boiler",
                 trDesc: "Dijital kontrol paneli, otomatik sıcaklık ayarı ve çift daire ısıtma gücüne sahip %100 yerli üretim katı yakıtlı kat kaloriferi. Apartman ve müstakil evler için ideal merkezi ısıtma çözümü.",
@@ -350,11 +350,12 @@ document.addEventListener('DOMContentLoaded', () => {
         cards.forEach(c => c.remove());
 
         activeState.products.forEach((prod, index) => {
+            const imgSrc = prod.image.startsWith('/') || prod.image.startsWith('http') ? prod.image : '/' + prod.image;
             const card = document.createElement('div');
             card.className = 'admin-product-card';
             card.innerHTML = `
                 <div class="admin-product-img">
-                    <img src="${prod.image}" alt="${prod.trTitle}">
+                    <img src="${imgSrc}" alt="${prod.trTitle}">
                 </div>
                 <div class="admin-product-details">
                     <div class="admin-product-title">${prod.trTitle}</div>
@@ -430,7 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('prod-form-id').value = '';
             document.getElementById('prod-form-id').readOnly = false;
             document.getElementById('prod-form-price').value = '';
-            document.getElementById('prod-form-image').value = 'images/soba-somine.png';
+            document.getElementById('prod-form-image').value = '/images/soba-somine.png';
             
             document.getElementById('prod-form-title-tr').value = '';
             document.getElementById('prod-form-tag-tr').value = '';

@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 id: "somine",
                 trTag: "En Çok Satan",
                 enTag: "Best Seller",
-                image: "images/soba-somine.png",
+                image: "/images/soba-somine.png",
                 trTitle: "Altın Süslü Kuzine",
                 enTitle: "Golden Kuzine",
                 trDesc: "Geleneksel motifler, el işçiliği altın sarısı döküm köşeler ve Kumru Soba kabartma amblemiyle usta işi, en prestijli otantik kuzine modelimiz.",
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 id: "klasik",
                 trTag: "Geleneksel",
                 enTag: "Traditional",
-                image: "images/soba-klasik.png",
+                image: "/images/soba-klasik.png",
                 trTitle: "Klasik Kuzine",
                 enTitle: "Classic Kuzine",
                 trDesc: "Kumru'nun meşhur kara sac kuzine tasarımı. Isıyı anında dışarı veren yüksek verimli dayanıklı sac gövde, geniş yakma haznesi ve geleneksel pişirme fırınıyla nostaljik ve güçlü.",
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 id: "kovali",
                 trTag: "Yüksek Güç",
                 enTag: "High Power",
-                image: "images/soba-kovali.png",
+                image: "/images/soba-kovali.png",
                 trTitle: "Fanlı Soba",
                 enTitle: "Fanned Stove",
                 trDesc: "Geniş atölyeler, kafeler, restoranlar ve yüksek tavanlı alanlar için özel ısı boruları ve dahili 220V fan üfleme sistemiyle donatılmış ultra güçlü katı yakıtlı ısıtma sistemimiz.",
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 id: "kat-kaloriferi",
                 trTag: "100% Yerli Üretim",
                 enTag: "100% Domestic Production",
-                image: "images/kat-kaloriferi.png",
+                image: "/images/kat-kaloriferi.png",
                 trTitle: "Kat Kaloriferi",
                 enTitle: "Floor Heating Boiler",
                 trDesc: "Dijital kontrol paneli, otomatik sıcaklık ayarı ve çift daire ısıtma gücüne sahip %100 yerli üretim katı yakıtlı kat kaloriferi. Apartman ve müstakil evler için ideal merkezi ısıtma çözümü.",
@@ -443,12 +443,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>`;
             });
             
+            const imgSrc = prod.image.startsWith('/') || prod.image.startsWith('http') ? prod.image : '/' + prod.image;
+            
             const card = document.createElement('div');
             card.className = 'product-card';
             card.innerHTML = `
                 <span class="product-tag" style="background-color: var(--primary);">${tagText}</span>
                 <div class="product-img-wrap">
-                    <img src="${prod.image}" alt="${titleText}">
+                    <img src="${imgSrc}" alt="${titleText}">
                 </div>
                 <div class="product-body">
                     <h3 class="product-title">${titleText}</h3>
@@ -660,19 +662,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 trName: "Klasik Altın Süslü Kuzine Soba",
                 enName: "Classic Golden Decorated Kuzine Stove",
                 price: 18500,
-                image: "images/soba-somine.png"
+                image: "/images/soba-somine.png"
             },
             klasik: {
                 trName: "Klasik Fırınlı Kuzine Soba",
                 enName: "Classic Baking Kuzine Stove",
                 price: 12000,
-                image: "images/soba-klasik.png"
+                image: "/images/soba-klasik.png"
             },
             kovali: {
                 trName: "Yüksek Verimli Fanlı Soba",
                 enName: "High-Efficiency Fanned Stove",
                 price: 21000,
-                image: "images/soba-kovali.png"
+                image: "/images/soba-kovali.png"
             }
         },
         colors: {
@@ -717,7 +719,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Görsel güncelleme
         if (previewImg) {
-            previewImg.src = config.types[selections.type].image;
+            const imgSrc = config.types[selections.type].image;
+            previewImg.src = imgSrc.startsWith('/') || imgSrc.startsWith('http') ? imgSrc : '/' + imgSrc;
             // Filtre uygulayarak dinamik emaye rengini değiştir
             previewImg.style.filter = config.colors[selections.color].filter;
         }
@@ -854,7 +857,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('res-kw').textContent = `${heatNeeded} kW`;
         document.getElementById('res-pipe').textContent = `${pipeLength} Metre`;
         document.getElementById('res-model-title').textContent = stoveTitle;
-        document.getElementById('res-model-img').src = recommendedStove.image;
+        const recImg = recommendedStove.image;
+        document.getElementById('res-model-img').src = recImg.startsWith('/') || recImg.startsWith('http') ? recImg : '/' + recImg;
         document.getElementById('res-model-img').style.filter = "none"; // Temiz renk
 
         // UI geçişi
