@@ -54,13 +54,6 @@
 
 # ========== YÖNLENDİRMELER (SEO dostu) ==========
 
-# www olmayan adresi www'ye yönlendir (canonical tutarlılığı)
-[[redirects]]
-  from = "https://kumrusoba.com/*"
-  to = "https://www.kumrusoba.com/:splat"
-  status = 301
-  force = true
-
 # Trailing slash tutarlılığı
 [[redirects]]
   from = "/index.html"
