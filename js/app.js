@@ -5,6 +5,9 @@
              Galeri Lightbox ve Scroll Efektleri yönetim sistemi.
    ========================================================================== */
 
+import { dbRef, hasConfig } from './firebase.js';
+import { onValue } from 'firebase/database';
+
 document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // 0. DINAMIK SITE ICERIK MODELI VE OYNATICI (Dynamic Content Model)
@@ -144,6 +147,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!activeSiteContent) {
         activeSiteContent = defaultSiteContent;
         localStorage.setItem('kumru_site_content', JSON.stringify(activeSiteContent));
+    }
+
+    // Real-time Sync with Firebase Database
+    if (hasConfig && dbRef) {
+        onValue(dbRef, (snapshot) => {
+            const val = snapshot.val();
+            if (val) {
+                activeSiteContent = val;
+                localStorage.setItem('kumru_site_content', JSON.stringify(activeSiteContent));
+                setLanguage(currentLang);
+            }
+        }, (error) => {
+            console.error("Firebase database read failed:", error);
+        });
     }
 
     // ==========================================

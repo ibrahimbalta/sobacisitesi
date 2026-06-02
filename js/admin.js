@@ -5,6 +5,9 @@
              JSON içe/dışa aktarım ve kalıcı kod oluşturma motoru.
    ========================================================================== */
 
+import { dbRef, hasConfig } from './firebase.js';
+import { set, get } from 'firebase/database';
+
 document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // AUTH / LOGIN SYSTEM
@@ -700,7 +703,19 @@ document.addEventListener('DOMContentLoaded', () => {
         // Save to LocalStorage
         localStorage.setItem('kumru_site_content', JSON.stringify(activeState));
         
-        showToast('Tüm ayarlar başarıyla kaydedildi! Siteniz güncellendi.', 'success');
+        // Save to Firebase Database
+        if (hasConfig && dbRef) {
+            set(dbRef, activeState)
+                .then(() => {
+                    showToast('Tüm ayarlar veritabanına ve yerel belleğe başarıyla kaydedildi!', 'success');
+                })
+                .catch((err) => {
+                    console.error("Firebase save failed:", err);
+                    showToast('Veritabanına kaydedilirken hata oluştu. Yerel kayıt yapıldı.', 'error');
+                });
+        } else {
+            showToast('Tüm ayarlar başarıyla kaydedildi! Siteniz güncellendi.', 'success');
+        }
         
         generateDeveloperCode();
     });
@@ -750,8 +765,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 activeState = importedData;
                 localStorage.setItem('kumru_site_content', JSON.stringify(activeState));
-                showToast('Yeni yapılandırma başarıyla yüklendi! Panel yenileniyor...', 'success');
-                setTimeout(() => location.reload(), 1000);
+                
+                if (hasConfig && dbRef) {
+                    set(dbRef, activeState)
+                        .then(() => {
+                            showToast('Yeni yapılandırma veritabanına başarıyla yüklendi! Panel yenileniyor...', 'success');
+                            setTimeout(() => location.reload(), 1000);
+                        })
+                        .catch((err) => {
+                            console.error("Firebase import save failed:", err);
+                            showToast('Veritabanına kaydedilirken hata oluştu. Panel yenileniyor...', 'error');
+                            setTimeout(() => location.reload(), 1000);
+                        });
+                } else {
+                    showToast('Yeni yapılandırma başarıyla yüklendi! Panel yenileniyor...', 'success');
+                    setTimeout(() => location.reload(), 1000);
+                }
 
             } catch (err) {
                 showToast('JSON ayrıştırma hatası! Lütfen geçerli bir dosya yükleyin.', 'error');
@@ -764,8 +793,21 @@ document.addEventListener('DOMContentLoaded', () => {
     btnResetDefaults.addEventListener('click', () => {
         if (confirm('Tüm özelleştirmelerinizi silip siteyi fabrika ayarlarına sıfırlamak istediğinize emin misiniz? Bu işlem geri alınamaz.')) {
             localStorage.removeItem('kumru_site_content');
-            showToast('Tüm veriler temizlendi ve orijinal haline getirildi! Yenileniyor...', 'warning');
-            setTimeout(() => location.reload(), 1000);
+            
+            if (hasConfig && dbRef) {
+                set(dbRef, defaultSiteContent)
+                    .then(() => {
+                        showToast('Veritabanı ve yerel veriler fabrika ayarlarına sıfırlandı! Yenileniyor...', 'warning');
+                        setTimeout(() => location.reload(), 1000);
+                    })
+                    .catch((err) => {
+                        console.error("Firebase database reset failed:", err);
+                        showToast('Veritabanı sıfırlanırken hata oluştu.', 'error');
+                    });
+            } else {
+                showToast('Tüm veriler temizlendi ve orijinal haline getirildi! Yenileniyor...', 'warning');
+                setTimeout(() => location.reload(), 1000);
+            }
         }
     });
 
@@ -809,4 +851,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial Load execution
     loadStateIntoForms();
+
+    // Fetch latest data from Firebase Database if available
+    if (hasConfig && dbRef) {
+        get(dbRef).then((snapshot) => {
+            const val = snapshot.val();
+            if (val) {
+                activeState = val;
+                localStorage.setItem('kumru_site_content', JSON.stringify(activeState));
+                loadStateIntoForms();
+                showToast('En güncel veriler veritabanından yüklendi.', 'success');
+            }
+        }).catch((err) => {
+            console.error("Firebase database load failed:", err);
+            showToast('Firebase verileri yüklenemedi. Yerel veriler kullanılıyor.', 'warning');
+        });
+    }
 });
