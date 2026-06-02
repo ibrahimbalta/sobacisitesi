@@ -282,7 +282,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "foot-desc": "Kumru Soba, 1987'den bu yana Ordu Kumru'da döküm ve sac kuzine soba imalatında kalitenin ve güvenin adresidir.",
             "foot-copy": "&copy; 2026 Kumru Soba. Tüm Hakları Saklıdır.",
             "foot-by": "DeepMind Antigravity Tarafından Gururla Tasarlandı.",
-            "wa-bubble": "Merhaba! Nasıl yardımcı olabilirim?"
+            "wa-bubble": "Merhaba! Nasıl yardımcı olabilirim?",
+            "mobile-wa-btn": "WhatsApp",
+            "mobile-call-btn": "Hemen Arayın"
         },
         en: {
             // Navbar
@@ -399,7 +401,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "foot-desc": "Kumru Soba is the symbol of trust and quality in cast-iron and sheet-metal stoves in Kumru, Ordu since 1987.",
             "foot-copy": "&copy; 2026 Kumru Soba. All Rights Reserved.",
             "foot-by": "Proudly Designed by DeepMind Antigravity.",
-            "wa-bubble": "Hello! How can I help you today?"
+            "wa-bubble": "Hello! How can I help you today?",
+            "mobile-wa-btn": "WhatsApp",
+            "mobile-call-btn": "Call Now"
         }
     };
 
@@ -557,6 +561,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const waBtn = waWidget.querySelector('.whatsapp-btn');
             if (waBtn) waBtn.href = activeSiteContent.contact.whatsapp;
         }
+
+        const mobWaBtn = document.getElementById('mobile-wa-btn');
+        if (mobWaBtn) mobWaBtn.href = activeSiteContent.contact.whatsapp;
+
+        const mobCallBtn = document.getElementById('mobile-call-btn');
+        if (mobCallBtn) mobCallBtn.href = `tel:${activeSiteContent.contact.phoneRaw}`;
     }
 
     function renderCustomizerStoves(lang) {

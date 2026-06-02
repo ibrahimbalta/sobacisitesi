@@ -102,6 +102,41 @@ document.addEventListener('DOMContentLoaded', () => {
     // Run auth check immediately
     checkAuthAndShow();
 
+    // Mobile sidebar drawer control logic
+    const btnSidebarToggle = document.getElementById('btn-sidebar-toggle');
+    const btnSidebarClose = document.getElementById('btn-sidebar-close');
+    const sidebar = document.querySelector('.sidebar');
+
+    if (btnSidebarToggle && sidebar) {
+        btnSidebarToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            sidebar.classList.toggle('mobile-active');
+        });
+    }
+
+    if (btnSidebarClose && sidebar) {
+        btnSidebarClose.addEventListener('click', () => {
+            sidebar.classList.remove('mobile-active');
+        });
+    }
+
+    document.addEventListener('click', (e) => {
+        if (sidebar && sidebar.classList.contains('mobile-active')) {
+            if (!sidebar.contains(e.target) && btnSidebarToggle && !btnSidebarToggle.contains(e.target)) {
+                sidebar.classList.remove('mobile-active');
+            }
+        }
+    });
+
+    const navButtons = document.querySelectorAll('.nav-item button');
+    navButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (sidebar && sidebar.classList.contains('mobile-active')) {
+                sidebar.classList.remove('mobile-active');
+            }
+        });
+    });
+
     // 1. Durum ve Veri Yönetimi (State Management)
     const defaultSiteContent = {
         hero: {
