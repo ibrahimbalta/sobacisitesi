@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Ana Sayfa -->
+  <url>
+    <loc>https://www.kumrusoba.com/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.kumrusoba.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.kumrusoba.com/?lang=en" />
+    <image:image>
+      <image:loc>https://www.kumrusoba.com/images/hero-bg.png</image:loc>
+      <image:title>Kumru Soba - Kuzine Soba İmalatı Ordu Kumru</image:title>
+      <image:caption>Kumru Soba döküm kuzine soba imalatı - 1987'den beri Ordu Kumru'da üretim</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.kumrusoba.com/images/soba-somine.png</image:loc>
+      <image:title>Altın Süslü Döküm Kuzine Soba</image:title>
+      <image:caption>El işçiliği altın süslemeli döküm şömine kuzine soba modeli</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.kumrusoba.com/images/soba-klasik.png</image:loc>
+      <image:title>Klasik Fırınlı Kuzine Soba</image:title>
+      <image:caption>Geleneksel sac kuzine soba - fırınlı model</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.kumrusoba.com/images/soba-kovali.png</image:loc>
+      <image:title>Fanlı Soba - Yüksek Güçlü Isıtma</image:title>
+      <image:caption>220V fanlı yüksek kapasiteli katı yakıtlı soba</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.kumrusoba.com/images/kat-kaloriferi.png</image:loc>
+      <image:title>Kat Kaloriferi - Merkezi Isıtma Sistemi</image:title>
+      <image:caption>Dijital kontrol panelli katı yakıtlı kat kaloriferi</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Soba Tasarla Bölümü -->
+  <url>
+    <loc>https://www.kumrusoba.com/#customizer</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Ürünlerimiz Bölümü -->
+  <url>
+    <loc>https://www.kumrusoba.com/#products</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Isı Hesaplayıcı Bölümü -->
+  <url>
+    <loc>https://www.kumrusoba.com/#calculator</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Hikayemiz Bölümü -->
+  <url>
+    <loc>https://www.kumrusoba.com/#story</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Galeri Bölümü -->
+  <url>
+    <loc>https://www.kumrusoba.com/#gallery</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- İletişim Bölümü -->
+  <url>
+    <loc>https://www.kumrusoba.com/#contact</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

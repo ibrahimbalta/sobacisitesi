@@ -1,0 +1,29 @@
+# Kumru Soba - robots.txt
+# https://www.kumrusoba.com
+
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /js/admin.js
+Disallow: /css/admin.css
+
+# Sitemap
+Sitemap: https://www.kumrusoba.com/sitemap.xml
+
+# Crawl-delay (önerilen tarama gecikmesi)
+Crawl-delay: 5
+
+# Google Bot
+User-agent: Googlebot
+Allow: /
+Disallow: /admin.html
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /
+Disallow: /admin.html
+
+# Yandex Bot
+User-agent: Yandex
+Allow: /
+Disallow: /admin.html
